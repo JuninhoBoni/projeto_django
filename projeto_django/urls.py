@@ -19,12 +19,14 @@ from core import views
 from django.views.generic import RedirectView
 
 urlpatterns = [
+    path('', RedirectView.as_view(url='/inicial/')),
     path('admin/', admin.site.urls),
-    path('umidade/<city>/<int:days>/', views.umidade),
-    path('calculadora/<operacao>/<int:a>/<int:b>/', views.calculadora),
-    path('cidades/', views.lista_cidades),
-    path('', RedirectView.as_view(url='/cidades/')),
+    # path('umidade/<city>/<int:days>/', views.umidade),
+    # path('calculadora/<operacao>/<int:a>/<int:b>/', views.calculadora),
     path('login/', views.login_user),
     path('login/submit', views.submit_login),
     path('logout/', views.logout_user),
+    path('cidades/', views.lista_cidades),
+    path('inicial/', views.inicial),
+    path('alterar/', views.alterar),
 ]
