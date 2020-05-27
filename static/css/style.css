@@ -1,0 +1,37 @@
+body{
+    background: gray;
+    color: white;
+    font: 20px, Arial, sans-serif;
+    margin-left: 100px;
+    margin-right: 200px;
+}
+
+footer{
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: rgb(53, 40, 8);
+    color: white;
+}
+
+body {
+  margin: 0;
+  padding: 10;
+  background-color: #363636;
+  height: 100vh;
+}
+
+#login .container #login-row #login-column #login-box {
+  margin-top: 120px;
+  max-width: 600px;
+  height: 320px;
+  border: 1px solid #9C9C9C;
+  background-color: #EAEAEA;
+}
+
+#login .container #login-row #login-column #login-box #login-form {
+  padding: 20px;
+}
+
+#login .container #login-row #login-column #login-box #login-form #register-link {
+  margin-top: -85px;
+}
