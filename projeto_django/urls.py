@@ -14,7 +14,8 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+from django.conf.urls import url
 from core import views
 from django.views.generic import RedirectView
 
@@ -23,10 +24,21 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # path('umidade/<city>/<int:days>/', views.umidade),
     # path('calculadora/<operacao>/<int:a>/<int:b>/', views.calculadora),
-    path('login/', views.login_user),
+    path('login/', views.login_user, name='login'),
     path('login/submit', views.submit_login),
     path('logout/', views.logout_user),
     path('cidades/', views.lista_cidades),
     path('inicial/', views.inicial),
     path('alterar/', views.alterar),
+    path('usuarios/cadastro/', views.cadastro),
+    #url(r'^cadstro$', views.cadastro, name='cadastro')
+    #url(r'^', include('projeto_django.urls', namespace='usuarios', app_name='projeto_django')),
+    #path('login/cadastro/', views.cadastro),
+    path('usuarios/cadastro/submit', views.cadastro),
+    #path('login/cadastro/voltar', views.logout_user),
+
+    #path('account/', include('account.urls')),
+    #path('registrar/', views.register.as_view(), name='registrar'),
+    #path('registrar/', views.cadastro, name='registrar'),
+
 ]

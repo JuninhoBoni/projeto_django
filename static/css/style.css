@@ -1,23 +1,20 @@
-body{
-    background: gray;
+body {
     color: white;
     font: 20px, Arial, sans-serif;
-    margin-left: 100px;
-    margin-right: 200px;
+    margin: 0;
+    padding: 10;
+    background-color: #363636;
+    padding-left: 100px;
+    padding-right: 100px;
+    height: 100vh;
 }
 
-footer{
-    padding-top: 40px;
-    padding-bottom: 40px;
-    background-color: rgb(53, 40, 8);
-    color: white;
+h2{
+    padding-top: 20px;
 }
 
-body {
-  margin: 0;
-  padding: 10;
-  background-color: #363636;
-  height: 100vh;
+h6{
+    padding: 20px;
 }
 
 #login .container #login-row #login-column #login-box {
