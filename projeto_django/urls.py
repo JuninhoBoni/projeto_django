@@ -27,14 +27,15 @@ urlpatterns = [
     path('login/', views.login_user, name='login'),
     path('login/submit', views.submit_login),
     path('logout/', views.logout_user),
-    path('cidades/', views.lista_cidades),
+    path('cidades/', views.lista_cidades, name='cidades'),
     path('inicial/', views.inicial),
     path('alterar/', views.alterar),
-    path('usuarios/cadastro/', views.cadastro),
+    path('usuarios/cadastro/', views.cadastro, name='cadastro'),
+    path('usuarios/cadastro/submit', views.cadastro),
     #url(r'^cadstro$', views.cadastro, name='cadastro')
     #url(r'^', include('projeto_django.urls', namespace='usuarios', app_name='projeto_django')),
     #path('login/cadastro/', views.cadastro),
-    path('usuarios/cadastro/submit', views.cadastro),
+
     #path('login/cadastro/voltar', views.logout_user),
 
     #path('account/', include('account.urls')),

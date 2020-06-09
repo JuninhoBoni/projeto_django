@@ -7,17 +7,24 @@ from django.contrib.auth.decorators import login_required  # requer autenticaç�
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from core.forms import UserModelForm
-
+import requests
 # Create your views here.
 
 def cadastro(request):
     logout(request)
+    key = '1a4f67e9f28d756ca5380309833f4a78'
     title = 'Acesse a Área Restrita para mais informações'
     form = UserModelForm(request.POST or None)
     context = {'form': form.errors,
                'title': title}
+    city = request.POST.get('cidade')
+    response = requests.get(
+        'http://api.openweathermap.org/data/2.5/forecast?q={city}&appid={key}'.format(city=city, key=key))
+    if response.status_code != 200:
+        context['cidade'] = 'Cidade não encontrada.'
+
     if request.method == 'POST':
-        if form.is_valid():
+        if form.is_valid() and response.status_code == 200:
             form.save()
             context['sucesso'] = 'USUÁRIO CADASTRADO COM SUCESSO'
             return render(request, 'cidades.html', context)
